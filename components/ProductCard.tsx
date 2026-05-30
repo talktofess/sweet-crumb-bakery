@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/lib/products";
 import { formatPrice } from "@/lib/format";
@@ -12,7 +13,13 @@ export default function ProductCard({ product }: { product: Product }) {
         style={{ background: product.tone }}
         aria-label={product.name}
       >
-        <span className="card-emoji">{product.emoji}</span>
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          sizes="(max-width: 860px) 100vw, 280px"
+          className="card-img"
+        />
       </Link>
       <div className="card-body">
         <p className="card-cat">{product.category}</p>

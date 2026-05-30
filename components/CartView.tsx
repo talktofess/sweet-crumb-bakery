@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "./CartContext";
 import { formatPrice } from "@/lib/format";
@@ -55,9 +56,14 @@ export default function CartView() {
               <span
                 className="cart-row-thumb"
                 style={{ background: product.tone }}
-                aria-hidden="true"
               >
-                {product.emoji}
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  sizes="64px"
+                  className="thumb-img"
+                />
               </span>
               <div className="cart-row-main">
                 <p className="cart-row-name">{product.name}</p>

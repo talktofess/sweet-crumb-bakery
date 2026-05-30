@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "./CartContext";
 import { formatPrice } from "@/lib/format";
@@ -47,9 +48,14 @@ export default function CartDrawer() {
                   <span
                     className="drawer-thumb"
                     style={{ background: product.tone }}
-                    aria-hidden="true"
                   >
-                    {product.emoji}
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      sizes="52px"
+                      className="thumb-img"
+                    />
                   </span>
                   <div className="drawer-item-main">
                     <p className="drawer-item-name">{product.name}</p>

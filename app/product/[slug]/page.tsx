@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PRODUCTS, getProductBySlug } from "@/lib/products";
@@ -37,12 +38,15 @@ export default async function ProductPage({
         ← Back to menu
       </Link>
       <div className="product-detail">
-        <div
-          className="product-art"
-          style={{ background: product.tone }}
-          aria-hidden="true"
-        >
-          <span>{product.emoji}</span>
+        <div className="product-art" style={{ background: product.tone }}>
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            sizes="(max-width: 860px) 100vw, 540px"
+            className="product-img"
+            priority
+          />
         </div>
         <div className="product-info">
           <p className="card-cat">{product.category}</p>

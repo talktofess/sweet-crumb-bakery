@@ -89,9 +89,21 @@ components/             # Header, ProductCard, CartContext, CartDrawer, CartView
 lib/                    # products (source of truth), stripe, format, orders
 ```
 
+## Product photos
+Each product renders a real photograph via `next/image` (catalog cards, product
+pages, and cart thumbnails). Images live in `public/products/<slug>.jpg` and are
+referenced by the `image` field in `lib/products.ts`; the `emoji` field remains
+as a fallback. The Next image optimizer serves resized WebP automatically.
+
+> **Licensing — read before going live.** The bundled photos are placeholder
+> stock fetched from [LoremFlickr](https://loremflickr.com) (random Creative
+> Commons Flickr images, licenses vary per photo). They're fine for development
+> and demos but **not cleared for commercial use as-is**. Before launching,
+> replace `public/products/*.jpg` with your **own product photography** (or
+> properly licensed stock). Keep the same filenames and nothing else needs to
+> change.
+
 ## Customizing
 - **Products:** edit `lib/products.ts` (prices are in **cents**).
-- **Real photos:** drop images in `public/` and swap the emoji/gradient art in
-  `ProductCard` / product page for `next/image`.
 - **Branding:** colors and type live as CSS variables at the top of
   `app/globals.css`.

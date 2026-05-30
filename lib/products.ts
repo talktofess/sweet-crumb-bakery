@@ -13,9 +13,11 @@ export interface Product {
   price: number;
   blurb: string;
   description: string;
-  /** emoji stand-in for product photography (drop real images in /public later) */
+  /** product photograph under /public */
+  image: string;
+  /** emoji fallback (used if the image ever fails to load) */
   emoji: string;
-  /** subtle per-card gradient for the minimal/premium look */
+  /** subtle per-card gradient shown behind the image while it loads */
   tone: string;
 }
 
@@ -29,6 +31,7 @@ export const PRODUCTS: Product[] = [
     blurb: "Vanilla sponge, raspberry, vanilla bean cream.",
     description:
       "Our founding recipe. Two layers of feather-light vanilla sponge with a seam of raspberry preserve and vanilla bean Chantilly, finished with a whisper of icing sugar.",
+    image: "/products/victoria-sponge.jpg",
     emoji: "🎂",
     tone: "linear-gradient(135deg,#f6efe7,#efe2d2)",
   },
@@ -41,6 +44,7 @@ export const PRODUCTS: Product[] = [
     blurb: "70% single-origin ganache, flourless crumb.",
     description:
       "A dense, flourless torte built on 70% single-origin chocolate and finished with a mirror ganache. Naturally gluten-free and unapologetically rich.",
+    image: "/products/dark-chocolate-torte.jpg",
     emoji: "🍫",
     tone: "linear-gradient(135deg,#efe6dc,#e3d3c2)",
   },
@@ -53,6 +57,7 @@ export const PRODUCTS: Product[] = [
     blurb: "Laminated 27 layers, frangipane, toasted almonds.",
     description:
       "Two days in the making: a 27-layer laminated croissant filled with house frangipane, baked twice, and showered in toasted almonds.",
+    image: "/products/almond-croissant.jpg",
     emoji: "🥐",
     tone: "linear-gradient(135deg,#f7f0e6,#f0e4d2)",
   },
@@ -65,6 +70,7 @@ export const PRODUCTS: Product[] = [
     blurb: "Sablé shell, Amalfi lemon curd, torched.",
     description:
       "A crisp sablé shell holding silky Amalfi lemon curd, torched to a bruléed edge. Sharp, bright, and balanced.",
+    image: "/products/lemon-tart.jpg",
     emoji: "🍋",
     tone: "linear-gradient(135deg,#f8f3e3,#efe7cf)",
   },
@@ -77,6 +83,7 @@ export const PRODUCTS: Product[] = [
     blurb: "48-hour ferment, blistered crust, open crumb.",
     description:
       "A 48-hour naturally-leavened country loaf with a blistered, lacquered crust and a wildly open crumb. Just flour, water, salt, and time.",
+    image: "/products/sourdough-loaf.jpg",
     emoji: "🍞",
     tone: "linear-gradient(135deg,#f2e9dc,#e6d6c1)",
   },
@@ -89,6 +96,7 @@ export const PRODUCTS: Product[] = [
     blurb: "Swedish-style, cardamom sugar, pearl sugar.",
     description:
       "A Swedish-style knotted bun layered with freshly ground cardamom sugar and crowned with crunchy pearl sugar.",
+    image: "/products/cinnamon-roll.jpg",
     emoji: "🌀",
     tone: "linear-gradient(135deg,#f6eee2,#ece0cc)",
   },
@@ -101,6 +109,7 @@ export const PRODUCTS: Product[] = [
     blurb: "Brown butter, sea salt, chocolate puddles.",
     description:
       "Brown-butter dough rested 36 hours, studded with chopped dark chocolate and finished with flaky sea salt. Crisp edge, molten centre.",
+    image: "/products/brown-butter-cookie.jpg",
     emoji: "🍪",
     tone: "linear-gradient(135deg,#f4ece0,#e9dcc8)",
   },
@@ -113,6 +122,7 @@ export const PRODUCTS: Product[] = [
     blurb: "Brown butter, Sicilian pistachio, gold.",
     description:
       "A petite brown-butter financier rich with Sicilian pistachio flour and a fleck of gold leaf. Moist, nutty, elegant.",
+    image: "/products/pistachio-financier.jpg",
     emoji: "🟢",
     tone: "linear-gradient(135deg,#f1ece0,#e4dcc6)",
   },
